@@ -4,91 +4,180 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>حساب الإجازة والرصيد – المحكمة العامة بالمجمعة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f7f4;--card:#fff;--tx:#1d2a1f;--mut:#5d6b5f;--bd:#d9e1da;--hd:#1b5e20;--hdt:#fff;--inp:#fff9c4;--inpt:#1d2a1f;--ok:#c8e6c9;--okt:#1b5e20;--ex:#ffcdd2;--ext:#b71c1c;--fu:#e3f2fd;--fut:#0d47a1;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121613;--card:#1b211c;--tx:#e8efe9;--mut:#9db0a0;--bd:#2f3a31;--hd:#2e7d32;--inp:#4a4520;--inpt:#fff3b0;--ok:#1f4a24;--okt:#a5d6a7;--ex:#5a2326;--ext:#ef9a9a;--fu:#1a3552;--fut:#90caf9;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121613;--card:#1b211c;--tx:#e8efe9;--mut:#9db0a0;--bd:#2f3a31;--hd:#2e7d32;--inp:#4a4520;--inpt:#fff3b0;--ok:#1f4a24;--okt:#a5d6a7;--ex:#5a2326;--ext:#ef9a9a;--fu:#1a3552;--fut:#90caf9;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6}
-main{max-width:980px;margin:0 auto;padding:16px}
-h1{font-size:1.25rem;margin:4px 0 12px;color:var(--hd)}
-.tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.tabs button{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:8px;font:inherit;cursor:pointer}
-.tabs button.on{background:var(--hd);color:var(--hdt);border-color:var(--hd)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;margin-bottom:14px}
-.set{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-label{display:block;font-size:.85rem;color:var(--mut);margin-bottom:4px}
-input{font:inherit;width:100%;padding:6px 8px;border:1px solid var(--bd);border-radius:6px;background:var(--inp);color:var(--inpt);text-align:center}
-.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.k{border-radius:10px;padding:12px;text-align:center}
-.k b{display:block;font-size:1.8rem;line-height:1.2}
-.k.ok{background:var(--ok);color:var(--okt)}.k.ex{background:var(--ex);color:var(--ext)}.k.de{background:var(--ex);color:var(--ext);border:2px solid var(--ext)}
-.wrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
-th{background:var(--hd);color:var(--hdt);padding:8px 6px;font-weight:600}
-td{border-bottom:1px solid var(--bd);padding:4px 6px;text-align:center}
-td input{width:76px}
-.pill{display:inline-block;min-width:56px;padding:1px 10px;border-radius:12px;font-size:.85rem}
-.s-ok{background:var(--ok);color:var(--okt)}.s-ex{background:var(--ex);color:var(--ext)}.s-fu{background:var(--fu);color:var(--fut)}
-.def{color:var(--ext);font-weight:700}
-.note{font-size:.85rem;color:var(--mut);margin:6px 0}
-button.rs{border:1px solid var(--bd);background:transparent;color:var(--mut);padding:6px 12px;border-radius:8px;font:inherit;cursor:pointer}
-.court{text-align:center;font-weight:700;font-size:1.05rem;color:var(--mut);margin-top:4px}
-h1{text-align:center}
-.wrap{position:relative}
-.wrap::after{content:"تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد";position:absolute;left:0;right:0;top:0;bottom:0;overflow:hidden;white-space:pre;text-align:center;font-size:1.5rem;line-height:5.2rem;font-weight:700;color:var(--tx);opacity:.08;transform:rotate(-18deg);pointer-events:none}
-input[readonly]{background:var(--bd);color:var(--tx);opacity:.85}
-.dec{margin:0 0 12px;padding:10px 12px;border-radius:8px;background:var(--fu);color:var(--fut);font-weight:600;text-align:center}
-.credit{text-align:center;font-size:.9rem;color:var(--tx);opacity:.7;margin:0 0 12px}
+:root{
+  --bg:#f1f4f1;--card:#fff;--tx:#17271f;--mut:#5f7067;--bd:#e1e8e3;
+  --pri:#0e5a3d;--pri2:#13805a;--gold:#b5862a;--goldbg:#fbf4e3;
+  --inp:#fffaea;--inpbd:#ead7a2;--inptx:#3d2f0a;
+  --ok:#1b7a4c;--okbg:#e3f3e9;--ex:#b2352e;--exbg:#fbe8e6;--fu:#2b5ca6;--fubg:#e6eef9;
+  --th:#123a2b;--zebra:#f8faf8;--now:#fdf6e4;
+  --sh:0 1px 2px rgba(16,40,28,.06),0 6px 20px rgba(16,40,28,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1310;--card:#161f1a;--tx:#e5eee8;--mut:#97a99f;--bd:#26332c;
+  --pri:#2a9a69;--pri2:#1b6d4b;--gold:#d8ac55;--goldbg:#2a2416;
+  --inp:#2a2615;--inpbd:#5c4e24;--inptx:#fff1c2;
+  --ok:#62d39c;--okbg:#163425;--ex:#ff8d83;--exbg:#3b1d1a;--fu:#93b8ff;--fubg:#17253b;
+  --th:#0a281d;--zebra:#19231e;--now:#2b2616;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1310;--card:#161f1a;--tx:#e5eee8;--mut:#97a99f;--bd:#26332c;
+  --pri:#2a9a69;--pri2:#1b6d4b;--gold:#d8ac55;--goldbg:#2a2416;
+  --inp:#2a2615;--inpbd:#5c4e24;--inptx:#fff1c2;
+  --ok:#62d39c;--okbg:#163425;--ex:#ff8d83;--exbg:#3b1d1a;--fu:#93b8ff;--fubg:#17253b;
+  --th:#0a281d;--zebra:#19231e;--now:#2b2616;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);color-scheme:dark}
 
-:root{--red:#c62828}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ok:#2e7d32;--okt:#fff;--ex:#c62828;--ext:#fff;--fu:#1565c0;--fut:#fff;--red:#ff8a80}}
-:root[data-theme="dark"]{--ok:#2e7d32;--okt:#fff;--ex:#c62828;--ext:#fff;--fu:#1565c0;--fut:#fff;--red:#ff8a80}
-:root:not([data-theme="dark"]){--ok:#2e7d32;--okt:#fff;--ex:#c62828;--ext:#fff;--fu:#1565c0;--fut:#fff}
-.k.lg{background:var(--fu);color:var(--fut)}
-.k small{display:block;opacity:.85;font-size:.95rem;margin-top:2px}
-table{font-size:1.1rem}
-th{font-size:1rem}
-td{font-weight:700;font-size:1.15rem;padding:6px}
-td:first-child{color:var(--hd)}
-td input{width:88px;font-size:1.15rem;font-weight:700}
-.pill{font-size:1rem;font-weight:700;min-width:64px}
-.def{color:var(--red)}
-.k b{font-size:2.6rem}
-th{background:#1f3a5f;color:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) th{background:#2c4f7c}}
-:root[data-theme="dark"] th{background:#2c4f7c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6;
+  padding-bottom:env(safe-area-inset-bottom,0px);font-variant-numeric:tabular-nums}
+
+/* Header */
+.hero{background:linear-gradient(135deg,var(--th) 0%,var(--pri) 55%,var(--pri2) 100%);color:#fff;
+  padding:calc(22px + env(safe-area-inset-top,0px)) 16px 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.09;
+  background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0);background-size:18px 18px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hero-in{max-width:1000px;margin:0 auto;position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  display:grid;place-items:center;flex:none}
+.logo svg{width:30px;height:30px}
+.court{font-size:.95rem;font-weight:500;opacity:.85;margin:0}
+h1{font-size:1.6rem;margin:0;font-weight:700;letter-spacing:-.2px}
+.chip{margin-inline-start:auto;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;
+  padding:6px 14px;font-size:.9rem;font-weight:600;white-space:nowrap}
+.chip b{color:#ffe2a3}
+
+main{max-width:1000px;margin:-44px auto 0;padding:0 16px 24px;position:relative}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;margin-bottom:16px;box-shadow:var(--sh)}
+.card h2{font-size:1rem;margin:0 0 12px;color:var(--pri);display:flex;align-items:center;gap:8px}
+.card h2::before{content:"";width:4px;height:18px;border-radius:4px;background:var(--gold)}
+
+/* Settings */
+.set{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+label{display:block;font-size:.82rem;color:var(--mut);margin-bottom:6px;font-weight:500;min-height:2.6em;display:flex;align-items:flex-end}
+input{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--inpbd);border-radius:10px;background:var(--inp);color:var(--inptx);
+  text-align:center;font-weight:700;font-size:1.1rem;transition:border-color .15s,box-shadow .15s}
+input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 25%,transparent)}
+input[readonly]{background:var(--zebra);border-color:var(--bd);color:var(--mut);cursor:not-allowed}
+.note{font-size:.85rem;color:var(--mut);margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--bd)}
+
+/* Summary */
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:16px}
+.k{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;box-shadow:var(--sh);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;gap:2px}
+.k::before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:var(--c)}
+.k .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--cb);color:var(--c);margin-bottom:6px}
+.k .ic svg{width:20px;height:20px}
+.k b{font-size:2.6rem;line-height:1.1;color:var(--c);font-weight:700}
+.k span{font-size:.92rem;color:var(--tx);font-weight:500}
+.k small{display:block;color:var(--mut);font-size:.85rem}
+.k.ok{--c:var(--ok);--cb:var(--okbg)}
+.k.ex{--c:var(--ex);--cb:var(--exbg)}
+.k.lg{--c:var(--fu);--cb:var(--fubg)}
+.k.de{--c:#fff;--cb:rgba(255,255,255,.18);background:var(--ex);border-color:var(--ex)}
+.k.de span{color:#fff}
+
+/* Table */
+.tcard{padding:0;overflow:hidden}
+.thead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 16px}
+.thead h2{margin:0}
+.legend{display:flex;gap:8px;flex-wrap:wrap;font-size:.8rem}
+.wrap{overflow:auto;max-height:70vh;border-top:1px solid var(--bd)}
+.tbl{position:relative;min-width:720px}
+table{border-collapse:separate;border-spacing:0;width:100%}
+th{position:sticky;top:0;z-index:2;background:var(--th);color:#fff;padding:10px 8px;font-weight:600;font-size:.88rem;white-space:nowrap}
+td{border-bottom:1px solid var(--bd);padding:7px 8px;text-align:center;font-weight:600;font-size:1.05rem}
+tbody tr:nth-child(even) td{background:var(--zebra)}
+tbody tr:hover td{background:color-mix(in srgb,var(--pri) 7%,var(--card))}
+td:first-child{color:var(--pri);font-weight:700}
+td input{width:86px;padding:5px 6px;font-size:1.05rem}
+tr.now td{background:var(--now)!important}
+tr.now td:first-child{box-shadow:inset -4px 0 0 var(--gold)}
+tr.now td:first-child::after{content:"الحالية";display:block;font-size:.68rem;color:var(--gold);font-weight:700;line-height:1}
+tr.fut td:not(:nth-child(3)){color:var(--mut);font-weight:500}
+tr.exp td:not(:nth-child(3)):not(:nth-child(7)){color:var(--mut)}
+.pill{display:inline-flex;align-items:center;gap:6px;min-width:70px;justify-content:center;padding:3px 12px;border-radius:999px;font-size:.85rem;font-weight:700}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.s-ok{background:var(--okbg);color:var(--ok)}.s-ex{background:var(--exbg);color:var(--ex)}.s-fu{background:var(--fubg);color:var(--fu)}
+.def{color:var(--ex)!important;font-weight:800}
+.g.pos{color:var(--ok);font-weight:800}
+
+/* watermark (designer credit) */
+.tbl::after{content:"تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد\A تصميم: حقيل بن سعد        تصميم: حقيل بن سعد        تصميم: حقيل بن سعد";
+  position:absolute;left:0;right:0;top:0;bottom:0;overflow:hidden;white-space:pre;text-align:center;font-size:1.5rem;line-height:5.2rem;font-weight:700;
+  color:var(--tx);opacity:.06;transform:rotate(-18deg);pointer-events:none;z-index:1}
+
+/* Footer */
+.dec{margin:0 0 14px;padding:12px 14px;border-radius:12px;background:var(--goldbg);color:var(--tx);font-weight:600;
+  border-inline-start:4px solid var(--gold);display:flex;gap:10px;align-items:flex-start}
+.dec svg{flex:none;width:20px;height:20px;color:var(--gold);margin-top:2px}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+button.rs{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 16px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:background .15s,border-color .15s}
+button.rs:hover{border-color:var(--ex);color:var(--ex)}
+button.rs svg{width:16px;height:16px}
+.credit{color:var(--mut);font-size:.85rem}
+.credit b{color:var(--gold)}
+
+@media (max-width:560px){
+  h1{font-size:1.3rem}.chip{margin-inline-start:0}
+  .k b{font-size:2.2rem}
+}
 </style>
 </head>
 <body>
-<main>
-<div class="court">المحكمة العامة بالمجمعة</div>
-<h1>حساب الإجازة والرصيد</h1>
+<header class="hero">
+  <div class="hero-in">
+    <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M8.5 14.5l2.2 2.2 4.8-4.8"/></svg></div>
+    <div>
+      <p class="court">المحكمة العامة بالمجمعة</p>
+      <h1>حساب الإجازة والرصيد</h1>
+    </div>
+    <div class="chip">السنة الحالية: <b id="yr">1448</b>هـ</div>
+  </div>
+</header>
 
-<div class="card">
+<main>
+<section class="card">
+  <h2>الإعدادات</h2>
   <div class="set">
     <div><label for="E">الاستحقاق السنوي (يوم) – ثابت</label><input id="E" value="36" readonly type="number" min="0" inputmode="numeric"></div>
     <div><label for="L">الرصيد قبل القرار 350 (حتى 3 رجب 1439) – يوم</label><input id="L" value="0" type="number" min="0" inputmode="numeric"></div>
     <div><label for="N">مدة الصلاحية (سنوات)</label><input id="N" value="4" type="number" min="1" max="10" inputmode="numeric"></div>
     <div><label for="cur">السنة الحالية</label><input id="cur" value="1448" type="number" min="1439" max="1470" inputmode="numeric"></div>
   </div>
-  <p class="note">عند أخذ إجازة يُخصم أولاً من أقدم الأرصدة الصالحة ثم من الأحدث. عدّل أيام الإجازة في عمود «المستخدم» (الأصفر) وسيتحدث كل شيء تلقائياً.</p>
-</div>
+  <p class="note">عند أخذ إجازة يُخصم أولاً من أقدم الأرصدة الصالحة ثم من الأحدث. عدّل أيام الإجازة في عمود «المستخدم» (الخانات المظللة) وسيتحدث كل شيء تلقائياً.</p>
+</section>
 
-<div class="sum" id="sum" style="margin-bottom:14px"><div class="k ok"><b>115</b>إجمالي الرصيد الصالح للتمتع (أيام)</div><div class="k ex"><b>46</b>إجمالي الرصيد المنتهي (أيام)</div><div class="k lg"><b>0</b>رصيد ما قبل القرار 350 (1439) بعد طرح الأيام غير المغطاة<small>0 − 0</small></div></div><noscript><p class="dec">الحساب التلقائي يتطلب تفعيل JavaScript في المتصفح.</p></noscript>
+<div class="sum" id="sum"></div>
+<noscript><p class="dec">الحساب التلقائي يتطلب تفعيل JavaScript في المتصفح.</p></noscript>
 
-<div class="card wrap">
-<table>
-<thead><tr><th>العام</th><th>الاستحقاق</th><th>المستخدم</th><th>خُصم من أرصدة أقدم</th><th>غير مغطى</th><th>متبقي نهائي لهذه السنة</th><th>الحالة</th><th>يساهم في الصالح حالياً</th></tr></thead>
-<tbody id="rows"><tr><td>1439</td><td class="e">18</td><td><input type="number" min="0" inputmode="numeric" data-i="0" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-ex">منتهي</span></td><td class="g">0</td></tr><tr><td>1440</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="1" value="29"></td><td class="o">18</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-ex">منتهي</span></td><td class="g">0</td></tr><tr><td>1441</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="2" value="12"></td><td class="o">12</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-ex">منتهي</span></td><td class="g">0</td></tr><tr><td>1442</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="3" value="14"></td><td class="o">14</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-ex">منتهي</span></td><td class="g">0</td></tr><tr><td>1443</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="4" value="19"></td><td class="o">19</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-ex">منتهي</span></td><td class="g">0</td></tr><tr><td>1444</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="5" value="21"></td><td class="o">21</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-ex">منتهي</span></td><td class="g">0</td></tr><tr><td>1445</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="6" value="18"></td><td class="o">18</td><td class="d">–</td><td class="r">7</td><td><span class="pill s-ok">صالح</span></td><td class="g">7</td></tr><tr><td>1446</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="7" value="19"></td><td class="o">19</td><td class="d">–</td><td class="r">36</td><td><span class="pill s-ok">صالح</span></td><td class="g">36</td></tr><tr><td>1447</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="8" value="20"></td><td class="o">20</td><td class="d">–</td><td class="r">36</td><td><span class="pill s-ok">صالح</span></td><td class="g">36</td></tr><tr><td>1448</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="9" value="29"></td><td class="o">29</td><td class="d">–</td><td class="r">36</td><td><span class="pill s-ok">صالح</span></td><td class="g">36</td></tr><tr><td>1449</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="10" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1450</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="11" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1451</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="12" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1452</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="13" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1453</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="14" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1454</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="15" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1455</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="16" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1456</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="17" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1457</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="18" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1458</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="19" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1459</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="20" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1460</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="21" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1461</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="22" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1462</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="23" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1463</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="24" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1464</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="25" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1465</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="26" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1466</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="27" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1467</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="28" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1468</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="29" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1469</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="30" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr><tr><td>1470</td><td class="e">36</td><td><input type="number" min="0" inputmode="numeric" data-i="31" value="0"></td><td class="o">0</td><td class="d">–</td><td class="r">0</td><td><span class="pill s-fu">قادم</span></td><td class="g">0</td></tr></tbody>
-</table>
-</div>
+<section class="card tcard">
+  <div class="thead">
+    <h2>تفاصيل الرصيد حسب السنة</h2>
+    <div class="legend"><span class="pill s-ok">صالح</span><span class="pill s-ex">منتهي</span><span class="pill s-fu">قادم</span></div>
+  </div>
+  <div class="wrap"><div class="tbl">
+  <table>
+  <thead><tr><th>العام</th><th>الاستحقاق</th><th>المستخدم</th><th>خُصم من أرصدة أقدم</th><th>غير مغطى</th><th>متبقي نهائي لهذه السنة</th><th>الحالة</th><th>يساهم في الصالح حالياً</th></tr></thead>
+  <tbody id="rows"></tbody>
+  </table>
+  </div></div>
+</section>
 
-<div class="card">
-  <p class="dec">حسب قرار مجلس الوزراء: التعويض عن الإجازات 180 يوماً، ويكون الرصيد قبل 3 رجب 1439هـ.</p>
-  <button class="rs" id="rs">استعادة بيانات هذا الجدول الأصلية</button>
-</div>
+<section class="card">
+  <p class="dec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>حسب قرار مجلس الوزراء: التعويض عن الإجازات 180 يوماً، ويكون الرصيد قبل 3 رجب 1439هـ.</span></p>
+  <div class="actions">
+    <button class="rs" id="rs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>استعادة بيانات هذا الجدول الأصلية</button>
+    <span class="credit">تصميم: <b>حقيل بن سعد</b></span>
+  </div>
+</section>
 </main>
 
 <script>
@@ -123,31 +212,41 @@ function calc(s){
   return {rows,valid,expired,def};
 }
 
+const IC={
+ ok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+ ex:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+ lg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2"/><path d="M8 8h6"/></svg>',
+ de:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.01"/></svg>'
+};
+
 function build(){
   const s=S[tab];$("E").value=s.E;$("L").value=s.L||0;$("N").value=s.N;$("cur").value=s.cur;
-  $("rows").innerHTML=s.used.map((u,i)=>`<tr><td>${START+i}</td><td class="e"></td><td><input type="number" min="0" inputmode="numeric" data-i="${i}" value="${u}"></td><td class="o"></td><td class="d"></td><td class="r"></td><td><span class="pill"></span></td><td class="g"></td></tr>`).join("");
+  $("rows").innerHTML=s.used.map((u,i)=>`<tr><td>${START+i}</td><td class="e"></td><td><input type="number" min="0" inputmode="numeric" data-i="${i}" value="${u}" aria-label="المستخدم ${START+i}"></td><td class="o"></td><td class="d"></td><td class="r"></td><td><span class="pill"></span></td><td class="g"></td></tr>`).join("");
   update();
 }
 function update(){
   const s=S[tab],R=calc(s),tr=$("rows").children;
+  $("yr").textContent=s.cur;
   R.rows.forEach((r,i)=>{
     const t=tr[i],p=t.querySelector(".pill");
+    t.className=r.y===s.cur?"now":(r.st==="قادم"?"fut":(r.st==="منتهي"?"exp":""));
     t.querySelector(".e").textContent=(START+i===START?s.E/2:s.E);
     t.querySelector(".o").textContent=r.old;
     const d=t.querySelector(".d");d.textContent=r.def||"–";d.className="d"+(r.def?" def":"");
     t.querySelector(".r").textContent=r.y>s.cur?0:r.rem;
-    t.querySelector(".g").textContent=r.g;
+    const g=t.querySelector(".g");g.textContent=r.g;g.className="g"+(r.g>0?" pos":"");
     p.textContent=r.st;p.className="pill "+(r.st==="صالح"?"s-ok":r.st==="منتهي"?"s-ex":"s-fu");
   });
-  let h=`<div class="k ok"><b>${R.valid}</b>إجمالي الرصيد الصالح للتمتع (أيام)</div><div class="k ex"><b>${R.expired}</b>إجمالي الرصيد المنتهي (أيام)</div>`;
-  const L=s.L||0;h+=`<div class="k lg"><b>${Math.max(0,L-R.def)}</b>رصيد ما قبل القرار 350 (1439) بعد طرح الأيام غير المغطاة<small>${L} − ${Math.min(L,R.def)}</small></div>`;if(R.def>0)h+=`<div class="k de"><b>${R.def}</b>أيام مستخدمة تجاوزت الرصيد المتاح</div>`;
+  let h=`<div class="k ok"><div class="ic">${IC.ok}</div><b>${R.valid}</b><span>إجمالي الرصيد الصالح للتمتع (أيام)</span></div><div class="k ex"><div class="ic">${IC.ex}</div><b>${R.expired}</b><span>إجمالي الرصيد المنتهي (أيام)</span></div>`;
+  const L=s.L||0;h+=`<div class="k lg"><div class="ic">${IC.lg}</div><b>${Math.max(0,L-R.def)}</b><span>رصيد ما قبل القرار 350 (1439) بعد طرح الأيام غير المغطاة</span><small>${L} − ${Math.min(L,R.def)}</small></div>`;
+  if(R.def>0)h+=`<div class="k de"><div class="ic">${IC.de}</div><b>${R.def}</b><span>أيام مستخدمة تجاوزت الرصيد المتاح</span></div>`;
   $("sum").innerHTML=h;
 }
 
 document.addEventListener("click",e=>{
   const t=e.target.closest("[data-t]");
   if(t){tab=t.dataset.t;save();build()}
-  if(e.target.id==="rs"){S[tab]=JSON.parse(JSON.stringify(DEF[tab]));save();build()}
+  if(e.target.closest("#rs")){S[tab]=JSON.parse(JSON.stringify(DEF[tab]));save();build()}
 });
 document.addEventListener("input",e=>{
   const s=S[tab],el=e.target,v=Math.max(0,parseFloat(el.value)||0);
