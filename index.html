@@ -130,6 +130,15 @@ button.rs svg{width:16px;height:16px}
   .k b{font-size:2.2rem}
 }
 </style>
+<meta name="description" content="حاسبة رصيد الإجازات السنوية حسب السنة وصلاحية الرصيد – المحكمة العامة بالمجمعة.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="حساب الإجازة والرصيد">
+<meta property="og:description" content="حاسبة رصيد الإجازات السنوية حسب السنة وصلاحية الرصيد – المحكمة العامة بالمجمعة.">
+<meta property="og:image" content="https://abo-dana-saad.github.io/leave/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_SA">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0e5a3d">
 <link rel="icon" href="icon-192.png">
@@ -157,7 +166,7 @@ button.rs svg{width:16px;height:16px}
       <h1>حساب الإجازة والرصيد</h1>
     </div>
     <div class="chip">السنة الحالية: <b id="yr">1448</b>هـ</div>
-  <button class="inst" id="inst" hidden>تثبيت التطبيق على الجوال</button>
+  <button class="inst" id="inst" hidden>تثبيت التطبيق على الجوال</button><button class="inst" id="shr">مشاركة</button>
 </div>
 </header>
 
@@ -294,6 +303,9 @@ const ios=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='M
 document.getElementById('isteps').innerHTML=ios?'<li>افتح هذا الرابط في <b>Safari</b>.</li><li>اضغط زر <b>المشاركة</b> (المربع والسهم لأعلى).</li><li>اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم <b>«إضافة»</b>.</li>'
 :'<li>افتح هذا الرابط في <b>Chrome</b>.</li><li>اضغط القائمة <b>⋮</b> أعلى الشاشة.</li><li>اختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.</li>';
 d.classList.add('on')});
+document.getElementById('shr').addEventListener('click',async()=>{const u=location.origin+location.pathname,s=document.getElementById('shr');
+if(navigator.share){try{await navigator.share({title:'حساب الإجازة والرصيد',text:'حاسبة رصيد الإجازات – المحكمة العامة بالمجمعة',url:u})}catch(e){}return}
+try{await navigator.clipboard.writeText(u);s.textContent='نُسخ الرابط ✓';setTimeout(()=>s.textContent='مشاركة',2000)}catch(e){prompt('انسخ الرابط:',u)}});
 document.getElementById('ix').addEventListener('click',()=>d.classList.remove('on'));
 d.addEventListener('click',e=>{if(e.target===d)d.classList.remove('on')});
 })();
