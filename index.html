@@ -130,6 +130,23 @@ button.rs svg{width:16px;height:16px}
   .k b{font-size:2.2rem}
 }
 </style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0e5a3d">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="رصيد الإجازة">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+.inst{font:inherit;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.inst[hidden]{display:none}
+.idlg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
+.idlg.on{display:flex}.idlg .card{width:min(380px,100%);margin:0}
+.idlg ol{margin:8px 0 14px;padding-inline-start:22px;display:grid;gap:6px;color:var(--tx)}
+.idlg button{font:inherit;width:100%;border:0;border-radius:10px;padding:10px;background:var(--pri);color:#fff;font-weight:700;cursor:pointer}
+@media (max-width:560px){.inst{margin-inline-start:0}}
+</style>
 </head>
 <body>
 <header class="hero">
@@ -140,7 +157,8 @@ button.rs svg{width:16px;height:16px}
       <h1>حساب الإجازة والرصيد</h1>
     </div>
     <div class="chip">السنة الحالية: <b id="yr">1448</b>هـ</div>
-  </div>
+  <button class="inst" id="inst" hidden>تثبيت التطبيق على الجوال</button>
+</div>
 </header>
 
 <main>
@@ -258,6 +276,27 @@ document.addEventListener("input",e=>{
   save();update();
 });
 build();
+</script>
+<div class="idlg" id="idlg" role="dialog" aria-modal="true" aria-labelledby="ittl"><div class="card">
+<h2 id="ittl">تثبيت التطبيق</h2>
+<ol id="isteps"></ol>
+<button id="ix">تم</button>
+</div></div>
+<script>
+(()=>{const b=document.getElementById('inst'),d=document.getElementById('idlg');let P=null;
+const sa=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+if(!sa)b.hidden=false;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();P=e;b.hidden=false});
+addEventListener('appinstalled',()=>{b.hidden=true});
+b.addEventListener('click',async()=>{
+if(P){P.prompt();const c=await P.userChoice;P=null;if(c.outcome==='accepted')b.hidden=true;return}
+const ios=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+document.getElementById('isteps').innerHTML=ios?'<li>افتح هذا الرابط في <b>Safari</b>.</li><li>اضغط زر <b>المشاركة</b> (المربع والسهم لأعلى).</li><li>اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم <b>«إضافة»</b>.</li>'
+:'<li>افتح هذا الرابط في <b>Chrome</b>.</li><li>اضغط القائمة <b>⋮</b> أعلى الشاشة.</li><li>اختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.</li>';
+d.classList.add('on')});
+document.getElementById('ix').addEventListener('click',()=>d.classList.remove('on'));
+d.addEventListener('click',e=>{if(e.target===d)d.classList.remove('on')});
+})();
 </script>
 </body>
 </html>
